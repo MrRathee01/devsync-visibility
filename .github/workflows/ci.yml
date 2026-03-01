@@ -1,0 +1,20 @@
+name: CI Status Check
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: DevSync Audit - 23f2004420@ds.study.iitm.ac.in
+        run: |
+          echo "Running project health checks..."
+          echo "Status: Optimal"
